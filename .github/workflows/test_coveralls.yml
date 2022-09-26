@@ -34,4 +34,4 @@ jobs:
 
     - name: Coveralls Test Access to Github Actions
       run: |
-        curl --fail --request GET --url "https://coveralls.io"
+        curl --fail --request GET --url "https://api.github.com/installation/repositories"
