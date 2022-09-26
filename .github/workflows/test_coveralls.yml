@@ -3,7 +3,7 @@ name: Test Coveralls
 on: ["push", "pull_request"]
 
 env:
-  COVERALLS_NODE_DEBUG: 1
+  NODE_COVERALLS_DEBUG: 1
 
 jobs:
   build_and_test:
@@ -31,3 +31,6 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         coveralls-endpoint: https://enterprise-demo.coveralls.io
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby-enterprise.lcov
+
+    - name: Coveralls Test Access to Github Actions
+      run: curl -v -H "Accept: application/vnd.github.machine-man-preview+json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/installation/repositories"
