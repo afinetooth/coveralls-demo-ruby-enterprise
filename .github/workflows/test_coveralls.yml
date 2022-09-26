@@ -33,4 +33,6 @@ jobs:
         path-to-lcov: ./coverage/lcov/coveralls-demo-ruby-enterprise.lcov
 
     - name: Coveralls Test Access to Github Actions
-      run: curl -v -H "Accept: application/vnd.github.machine-man-preview+json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" "https://api.github.com/installation/repositories"
+      run: curl -v "https://api.github.com/installation/repositories" \
+            -H "Accept: application/vnd.github.machine-man-preview+json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" 
