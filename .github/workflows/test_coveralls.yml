@@ -34,6 +34,6 @@ jobs:
 
     - name: Coveralls Test Access to Github Actions
       run: |
-        curl --fail --header "Accept: application/vnd.github.machine-man-preview+json"\
+        curl --fail --header "Accept: application/vnd.github.machine-man-preview+json" \
         --header "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
         --request GET --url "https://api.github.com/installation/repositories"
