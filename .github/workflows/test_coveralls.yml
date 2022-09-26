@@ -34,4 +34,4 @@ jobs:
 
     - name: Coveralls Test Access to Github Actions
       run: |
-        curl --fail --request POST --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" --url "https://api.github.com/repos/${{ github.repository }}"
+        curl --fail --request GET --url "https://coveralls.io"
